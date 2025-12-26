@@ -1,0 +1,41 @@
+name: Scrape Vim & Vigor Classes
+
+on:
+  schedule:
+    - cron: "0 13 * * *"   # daily at 1pm UTC
+  workflow_dispatch:
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install selenium pandas
+
+      - name: Install Chrome
+        uses: browser-actions/setup-chrome@v1
+
+      - name: Run scraper
+        env:
+          TRAINERIZE_EMAIL: ${{ secrets.TRAINERIZE_EMAIL }}
+          TRAINERIZE_PASSWORD: ${{ secrets.TRAINERIZE_PASSWORD }}
+        run: |
+          python scraper/scrape_classes.py
+
+      - name: Commit updated JSON
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add data/classes.json
+          git commit -m "Update class schedule" || echo "No changes"
+          git push
