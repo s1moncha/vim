@@ -1,7 +1,6 @@
 import os
 import json
 import time
-import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options
@@ -19,7 +18,7 @@ OUTPUT_PATH = "data/classes.json"
 
 
 # ======================
-# SETUP SELENIUM
+# SETUP
 # ======================
 options = Options()
 options.add_argument("--headless=new")
@@ -27,7 +26,11 @@ options.add_argument("--disable-gpu")
 options.add_argument("--no-sandbox")
 options.add_argument("--window-size=1920,1080")
 
-driver = webdriver.Chrome(service=Service(), options=options)
+driver = webdriver.Chrome(
+    service=Service(),
+    options=options
+)
+
 wait = WebDriverWait(driver, 20)
 
 
@@ -36,54 +39,73 @@ wait = WebDriverWait(driver, 20)
 # ======================
 driver.get("https://vimandvigor.trainerize.com/app/client/17606051/classFinder")
 
-email_input = wait.until(EC.presence_of_element_located((By.ID, "emailInput")))
+email_input = wait.until(
+    EC.presence_of_element_located((By.ID, "emailInput"))
+)
+email_input.clear()
 email_input.send_keys(EMAIL)
 
-password_input = wait.until(EC.presence_of_element_located((By.ID, "passInput")))
+password_input = wait.until(
+    EC.presence_of_element_located((By.ID, "passInput"))
+)
+password_input.clear()
 password_input.send_keys(PASSWORD)
 
 sign_in_button = wait.until(
-    EC.element_to_be_clickable((By.CSS_SELECTOR, "button[data-testid='signIn-button']"))
+    EC.element_to_be_clickable(
+        (By.CSS_SELECTOR, "button[data-testid='signIn-button']")
+    )
 )
 sign_in_button.click()
 
+# give Trainerize time to settle auth
+time.sleep(3)
+
 
 # ======================
-# GO TO CLASS FINDER
+# NAVIGATE TO CLASS FINDER
 # ======================
 find_class_btn = wait.until(
-    EC.element_to_be_clickable((By.CSS_SELECTOR, "a[data-testid='find-class']"))
+    EC.element_to_be_clickable(
+        (By.CSS_SELECTOR, "a[data-testid='find-class']")
+    )
 )
 find_class_btn.click()
 
 
 # ======================
-# LOAD GRID
+# WAIT FOR CLASS GRID
 # ======================
-class_grid = wait.until(EC.presence_of_element_located((By.ID, "classFinderGrid")))
-time.sleep(2)
+class_grid = wait.until(
+    EC.presence_of_element_located((By.ID, "classFinderGrid"))
+)
+time.sleep(2)  # allow initial render
 
 
 # ======================
 # SCROLL TO LOAD ALL DAYS
 # ======================
 last_height = 0
+
 for _ in range(10):
     driver.execute_script(
-        "arguments[0].scrollTop = arguments[0].scrollHeight", class_grid
+        "arguments[0].scrollTop = arguments[0].scrollHeight",
+        class_grid
     )
     time.sleep(1)
 
     new_height = driver.execute_script(
-        "return arguments[0].scrollHeight", class_grid
+        "return arguments[0].scrollHeight",
+        class_grid
     )
+
     if new_height == last_height:
         break
     last_height = new_height
 
 
 # ======================
-# SCRAPE
+# EXTRACT CLASSES
 # ======================
 rows = []
 
@@ -92,8 +114,11 @@ day_headers = class_grid.find_elements(By.TAG_NAME, "h3")
 for header in day_headers:
     day_label = header.text.strip()
 
-    container = header.find_element(By.XPATH, "following-sibling::div[1]")
+    container = header.find_element(
+        By.XPATH, "following-sibling::div[1]"
+    )
 
+    # skip empty days
     if "nullContainer" in container.get_attribute("class"):
         continue
 
@@ -111,7 +136,7 @@ for header in day_headers:
                 "class_name": tds[0].text.strip(),
                 "time": tds[1].text.strip() if len(tds) > 1 else None,
                 "trainer": tds[2].text.strip() if len(tds) > 2 else None,
-                "location": tds[3].text.strip() if len(tds) > 3 else None,
+                "location": tds[3].text.strip() if len(tds) > 3 else None
             })
 
     except Exception:
