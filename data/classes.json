@@ -1,44 +1,51 @@
 [
   {
-    "day": "Tomorrow",
+    "day": "Today",
     "class_name": "5:15 pm - 6:15 pm\n(60 min)",
     "time": "1",
     "trainer": "HIIT",
     "location": "6064 Camp\nGroup Exercise Room"
   },
   {
-    "day": "Tomorrow",
+    "day": "Today",
     "class_name": "6:30 pm - 7:30 pm\n(60 min)",
     "time": "1",
     "trainer": "SHiNE",
     "location": "6064 Camp\nGroup Exercise Room"
   },
   {
-    "day": "Tomorrow",
+    "day": "Today",
     "class_name": "7:45 pm - 8:45 pm\n(60 min)",
     "time": "1",
     "trainer": "Yoga",
     "location": "6064 Camp\nGroup Exercise Room"
   },
   {
-    "day": "2 Jan, Friday",
+    "day": "Tomorrow",
     "class_name": "4:00 pm - 5:00 pm\n(60 min)",
     "time": "1",
     "trainer": "Step",
     "location": "6064 Camp\nGroup Exercise Room"
   },
   {
-    "day": "2 Jan, Friday",
+    "day": "Tomorrow",
     "class_name": "5:15 pm - 6:15 pm\n(60 min)",
     "time": "1",
     "trainer": "U-JAM",
     "location": "6064 Camp\nGroup Exercise Room"
   },
   {
-    "day": "2 Jan, Friday",
+    "day": "Tomorrow",
     "class_name": "6:30 pm - 7:30 pm\n(60 min)",
     "time": "1",
     "trainer": "LITE AND FIT",
+    "location": "6064 Camp\nGroup Exercise Room"
+  },
+  {
+    "day": "3 Jan, Saturday",
+    "class_name": "4:00 pm - 5:00 pm\n(60 min)",
+    "time": "1",
+    "trainer": "Yoga",
     "location": "6064 Camp\nGroup Exercise Room"
   },
   {
@@ -194,5 +201,26 @@
     "time": "1",
     "trainer": "LITE AND FIT",
     "location": "6064 Camp\nGroup Exercise Room"
+  },
+  {
+    "day": "8 Jan, Thursday",
+    "class_name": "12:45 am - 1:45 am\n(60 min)",
+    "time": "1",
+    "trainer": "SHiNE",
+    "location": "6064 Camp\nGroup Exercise Room"
+  },
+  {
+    "day": "8 Jan, Thursday",
+    "class_name": "2:00 am - 3:00 am\n(60 min)",
+    "time": "1",
+    "trainer": "Step Interval",
+    "location": "6064 Camp\nGroup Exercise Room"
+  },
+  {
+    "day": "8 Jan, Thursday",
+    "class_name": "5:30 pm - 6:15 pm\n(45 min)",
+    "time": "1",
+    "trainer": "Cycle",
+    "location": "6064 Camp\nCycling Room"
   }
 ]
