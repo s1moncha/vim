@@ -1,83 +1,41 @@
 [
   {
     "day": "Today",
-    "class_name": "2:00 pm - 2:45 pm\n(45 min)",
-    "time": "1",
-    "trainer": "Cycle",
-    "location": "6064 Camp\nCycling Room"
-  },
-  {
-    "day": "Today",
-    "class_name": "4:00 pm - 5:00 pm\n(60 min)",
-    "time": "1",
-    "trainer": "Body Pump",
-    "location": "6064 Camp\nGroup Exercise Room"
-  },
-  {
-    "day": "Today",
-    "class_name": "5:15 pm - 6:00 pm\n(45 min)",
-    "time": "1",
-    "trainer": "Zumba Toning",
-    "location": "6064 Camp\nGroup Exercise Room"
-  },
-  {
-    "day": "Today",
-    "class_name": "6:30 pm - 7:30 pm\n(60 min)",
-    "time": "1",
-    "trainer": "LITE AND FIT",
-    "location": "6064 Camp\nGroup Exercise Room"
-  },
-  {
-    "day": "Tomorrow",
-    "class_name": "12:45 am - 1:45 am\n(60 min)",
-    "time": "1",
-    "trainer": "SHiNE",
-    "location": "6064 Camp\nGroup Exercise Room"
-  },
-  {
-    "day": "Tomorrow",
-    "class_name": "2:00 am - 3:00 am\n(60 min)",
-    "time": "1",
-    "trainer": "Step Interval",
-    "location": "6064 Camp\nGroup Exercise Room"
-  },
-  {
-    "day": "Tomorrow",
     "class_name": "5:30 pm - 6:15 pm\n(45 min)",
     "time": "1",
     "trainer": "Cycle",
     "location": "6064 Camp\nCycling Room"
   },
   {
-    "day": "23 Jan, Friday",
+    "day": "Tomorrow",
     "class_name": "12:30 am - 1:30 am\n(60 min)",
     "time": "1",
     "trainer": "BOOTY + CORE",
     "location": "6064 Camp\nGroup Exercise Room"
   },
   {
-    "day": "23 Jan, Friday",
+    "day": "Tomorrow",
     "class_name": "3:30 am - 4:30 am\n(60 min)",
     "time": "1",
     "trainer": "Zumba",
     "location": "6064 Camp\nGroup Exercise Room"
   },
   {
-    "day": "23 Jan, Friday",
+    "day": "Tomorrow",
     "class_name": "4:00 pm - 5:00 pm\n(60 min)",
     "time": "1",
     "trainer": "Step",
     "location": "6064 Camp\nGroup Exercise Room"
   },
   {
-    "day": "23 Jan, Friday",
+    "day": "Tomorrow",
     "class_name": "5:15 pm - 6:15 pm\n(60 min)",
     "time": "1",
     "trainer": "U-JAM",
     "location": "6064 Camp\nGroup Exercise Room"
   },
   {
-    "day": "23 Jan, Friday",
+    "day": "Tomorrow",
     "class_name": "6:30 pm - 7:30 pm\n(60 min)",
     "time": "1",
     "trainer": "LITE AND FIT",
@@ -176,13 +134,6 @@
   },
   {
     "day": "27 Jan, Tuesday",
-    "class_name": "5:30 pm - 6:15 pm\n(45 min)",
-    "time": "1",
-    "trainer": "Cycle",
-    "location": "6064 Camp\nCycling Room"
-  },
-  {
-    "day": "27 Jan, Tuesday",
     "class_name": "6:45 pm - 7:45 pm\n(60 min)",
     "time": "1",
     "trainer": "Yoga",
@@ -211,13 +162,6 @@
   },
   {
     "day": "28 Jan, Wednesday",
-    "class_name": "2:00 pm - 2:45 pm\n(45 min)",
-    "time": "1",
-    "trainer": "Cycle",
-    "location": "6064 Camp\nCycling Room"
-  },
-  {
-    "day": "28 Jan, Wednesday",
     "class_name": "4:00 pm - 5:00 pm\n(60 min)",
     "time": "1",
     "trainer": "Body Pump",
@@ -235,6 +179,20 @@
     "class_name": "6:30 pm - 7:30 pm\n(60 min)",
     "time": "1",
     "trainer": "LITE AND FIT",
+    "location": "6064 Camp\nGroup Exercise Room"
+  },
+  {
+    "day": "29 Jan, Thursday",
+    "class_name": "12:45 am - 1:45 am\n(60 min)",
+    "time": "1",
+    "trainer": "SHiNE",
+    "location": "6064 Camp\nGroup Exercise Room"
+  },
+  {
+    "day": "29 Jan, Thursday",
+    "class_name": "2:00 am - 3:00 am\n(60 min)",
+    "time": "1",
+    "trainer": "Step Interval",
     "location": "6064 Camp\nGroup Exercise Room"
   }
 ]
